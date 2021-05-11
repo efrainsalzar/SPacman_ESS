@@ -33,7 +33,7 @@ public:
 	Moneda* getMoneda() { return moneda; }
 	Pared* getPared() { return pared; }
 	int getPosicionX() { return posicionX; }
-	//int getPosicionY() { return posicionY; }
+	int getPosicionY() { return posicionY; }
 
 	void setPacman(Pacman* _pacman) { pacman = _pacman; }
 	void setFantasma(Fantasma* _fantasma) { fantasma = _fantasma; }

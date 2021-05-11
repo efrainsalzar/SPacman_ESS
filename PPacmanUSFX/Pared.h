@@ -2,8 +2,7 @@
 #include "GameObject.h"
 #include "TileGraph.h"
 
-class Pared :
-    public GameObject
+class Pared : public GameObject
 {
 private:
     Tile* tileActual;
