@@ -1,0 +1,72 @@
+﻿  Fantasma.cpp
+  Fruta.cpp
+  GameManager.cpp
+E:\sis457\pac.man\PPacmanUSFX\GameManager.cpp(17,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  GameObject.cpp
+  main.cpp
+  MapGenerator.cpp
+E:\sis457\pac.man\PPacmanUSFX\MapGenerator.cpp(69,63): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+  Moneda.cpp
+E:\sis457\pac.man\PPacmanUSFX\Moneda.cpp(12,27): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Moneda.cpp(36,27): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+  Pacman.cpp
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(14,27): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(45,27): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(83,78): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(83,96): error C2660: 'TileGraph::getTileEn': la función no acepta 1 argumentos
+E:\sis457\pac.man\PPacmanUSFX\TileGraph.h(26,8): message : vea la declaración de 'TileGraph::getTileEn'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(86,78): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(86,96): error C2660: 'TileGraph::getTileEn': la función no acepta 1 argumentos
+E:\sis457\pac.man\PPacmanUSFX\TileGraph.h(26,8): message : vea la declaración de 'TileGraph::getTileEn'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(89,82): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(89,96): error C2660: 'TileGraph::getTileEn': la función no acepta 1 argumentos
+E:\sis457\pac.man\PPacmanUSFX\TileGraph.h(26,8): message : vea la declaración de 'TileGraph::getTileEn'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(92,82): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(92,96): error C2660: 'TileGraph::getTileEn': la función no acepta 1 argumentos
+E:\sis457\pac.man\PPacmanUSFX\TileGraph.h(26,8): message : vea la declaración de 'TileGraph::getTileEn'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(152,69): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(152,21): error C2672: 'std::max': no se encontró una función sobrecargada que coincida
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(152,100): error C2784: '_Ty std::max(std::initializer_list<_Elem>)': no se pudo deducir el argumento de plantilla para 'std::initializer_list<_Elem>' desde 'int'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(52): message : vea la declaración de 'std::max'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(152,100): error C2780: '_Ty std::max(std::initializer_list<_Elem>,_Pr)': se esperan 2 argumentos; 1 proporcionados
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(49): message : vea la declaración de 'std::max'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(152,100): error C2780: 'const _Ty &std::max(const _Ty &,const _Ty &) noexcept(<expr>)': se esperan 2 argumentos; 1 proporcionados
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(41): message : vea la declaración de 'std::max'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(152,100): error C2780: 'const _Ty &std::max(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)': se esperan 3 argumentos; 1 proporcionados
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(32): message : vea la declaración de 'std::max'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(155,69): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(155,21): error C2672: 'std::min': no se encontró una función sobrecargada que coincida
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(155,100): error C2784: '_Ty std::min(std::initializer_list<_Elem>)': no se pudo deducir el argumento de plantilla para 'std::initializer_list<_Elem>' desde 'int'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(76): message : vea la declaración de 'std::min'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(155,100): error C2780: '_Ty std::min(std::initializer_list<_Elem>,_Pr)': se esperan 2 argumentos; 1 proporcionados
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(73): message : vea la declaración de 'std::min'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(155,100): error C2780: 'const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)': se esperan 2 argumentos; 1 proporcionados
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(65): message : vea la declaración de 'std::min'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(155,100): error C2780: 'const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)': se esperan 3 argumentos; 1 proporcionados
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\utility(56): message : vea la declaración de 'std::min'
+E:\sis457\pac.man\PPacmanUSFX\Pacman.cpp(165,99): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+  Pared.cpp
+E:\sis457\pac.man\PPacmanUSFX\Pared.cpp(12,27): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\Pared.cpp(30,27): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+  Texture.cpp
+  Tile.cpp
+  TileGraph.cpp
+E:\sis457\pac.man\PPacmanUSFX\TileGraph.cpp(69,17): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+E:\sis457\pac.man\PPacmanUSFX\TileGraph.cpp(84,17): error C2039: "getPosicionY": no es un miembro de "Tile"
+E:\sis457\pac.man\PPacmanUSFX\Tile.h(10): message : vea la declaración de 'Tile'
+  Generando código...
