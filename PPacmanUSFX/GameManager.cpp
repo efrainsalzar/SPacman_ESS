@@ -16,10 +16,10 @@ int GameManager::onExecute() {
 
 	srand(time(nullptr));
 
-	TileGraph tileGraphGM(20, 15);
-
+	TileGraph tileGraphGM(40, 32);
+	textureManager = new TextureManager();
 	GameObject::tileGraph = &tileGraphGM;
-	generadorNivelJuego = new MapGenerator(&tileGraphGM, SCREEN_WIDTH, SCREEN_HEIGHT);
+	generadorNivelJuego = new MapGenerator(&tileGraphGM, textureManager, SCREEN_WIDTH, SCREEN_HEIGHT);
 	generadorNivelJuego->load("Resources/mapa.txt");
 	generadorNivelJuego->populate(actoresJuego);
 

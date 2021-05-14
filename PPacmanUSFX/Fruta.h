@@ -4,6 +4,7 @@
 #include <SDL.h>
 
 #include "GameObject.h"
+#include "TileGraph.h"
 
 using namespace std;
 
@@ -28,10 +29,11 @@ private:
 	int contadorTiempoVisible;
 	int contadorTiempoNoVisible;
 	int numeroFrutaVisible;
+	Tile* tileActual;
 
 public:
 	//Constructores y destructores
-	Fruta(Texture* _frutaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla);
+	Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla);
 	//~Fruta();
 
 	//Metodos accesores
@@ -39,10 +41,12 @@ public:
 	TIPO_FRUTA getTipoFruta() { return tipoFruta; }
 	int getTiempoVisible() { return tiempoVisible; }
 	int getTiempoNoVisible() { return tiempoNoVisible; }
+	Tile* getTile() { return tileActual; }
 
 	void setTipoFruta(TIPO_FRUTA _tipoFruta) { tipoFruta = _tipoFruta; }
 	void setTiempoVisble(int _tiempoVisible) { tiempoVisible = _tiempoVisible; }
 	void setTiempoNoVisble(int _tiempoNoVisible) { tiempoNoVisible = _tiempoNoVisible; }
+	void setTile(Tile* tileNuevo);
 
 	// Metodos varios
 

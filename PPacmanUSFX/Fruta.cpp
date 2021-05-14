@@ -3,9 +3,22 @@
 
 using namespace std;
 
-Fruta::Fruta(Texture* _frutaTextura, int _posicionX, int _posicionY,
-	int _ancho, int _alto, int _anchoPantalla, int _altoPantalla) :
+Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla):
 	GameObject(_frutaTextura, _posicionX, _posicionY, _ancho, _alto, _anchoPantalla, _altoPantalla) {
+
+	tileActual = _tile;
+
+	if (tileActual != nullptr) {
+		tileActual->setFruta(this);
+
+		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
+		posicionY = tileActual->getPosicionY() * Tile::altoTile;
+	}
+	else {
+		posicionX = 0;
+		posicionY = 0;
+	}
+
 	// Inicializa propiedade de la fruta
 	tipoFruta = TIPO_FRUTA_GUINDA;
 
@@ -19,18 +32,20 @@ Fruta::Fruta(Texture* _frutaTextura, int _posicionX, int _posicionY,
 }
 
 
+
+
 void Fruta::update()
 {
 	if (contadorTiempoVisible >= tiempoVisible) {
 		visible = false;
 		if (contadorTiempoNoVisible >= tiempoNoVisible) {
-			posicionX = 1 + rand() % anchoPantalla;
-			posicionY = 1 + rand() % altoPantalla;
+			//posicionX = 1 + rand() % anchoPantalla;
+			//posicionY = 1 + rand() % altoPantalla;
 			contadorTiempoVisible = 0;
 			contadorTiempoNoVisible = 0;
 			visible = true;
 			//numeroFrutaVisible = rand() % frutasTextures.size();
-			numeroFrutaVisible = rand() % 4;
+			//numeroFrutaVisible = rand() % 4;
 		}
 		else {
 			contadorTiempoNoVisible++;
@@ -39,5 +54,17 @@ void Fruta::update()
 	}
 	else {
 		contadorTiempoVisible++;
+	}
+}
+
+void Fruta::setTile(Tile* _tileNuevo){
+	if (tileActual != nullptr)
+		tileActual->setFruta(nullptr);
+	tileActual = _tileNuevo;
+
+	if (tileActual != nullptr) {
+		tileActual->setFruta(this);
+		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
+		posicionY = tileActual->getPosicionY() * Tile::altoTile;
 	}
 }

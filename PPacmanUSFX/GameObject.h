@@ -39,7 +39,7 @@ protected:
 	int numeroFrame;
 	int contadorFrames;
 	int framesMovimiento;
-	int vistaX = 0; int vistaY = 0;
+	//int vistaX = 0; int vistaY = 0;
 
 public:
 	//Constructores y destructores

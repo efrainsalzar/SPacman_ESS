@@ -3,11 +3,22 @@
 
 using namespace std;
 
-Fantasma::Fantasma(Texture* _fantasmaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron) :
+Fantasma::Fantasma(Tile* _tile, Texture* _fantasmaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron) :
 	GameObject(_fantasmaTextura,_posicionX, _posicionY, _ancho, _alto, _anchoPantalla, _altoPantalla)
 {
-	numeroFrame = 0;
-	contadorFrames = 0;
+	if (tileActual != nullptr) {
+		tileActual->setFantasma(this);
+
+		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
+		posicionY = tileActual->getPosicionY() * Tile::altoTile;
+	}
+	else {
+		posicionX = _posicionX;
+		posicionY = _posicionY;
+	}
+
+	//numeroFrame = 0;
+	//contadorFrames = 0;
 	velocidadPatron = _velocidadPatron;
 
 	Pxi = posicionX;
@@ -31,12 +42,12 @@ void Fantasma::update()
 
 	if (sw)
 	{
-		vistaY = 25;
+		//vistaY = 25;
 		if (Pxi < Pf) //derecha
 		{
 			posicionX += velocidadPatron;
 			Pxi = getPosicionX();
-			vistaX = 0;
+			//vistaX = 0;
 			if (Pxi >= Pf)
 			{
 				Pxi = Pf;
@@ -48,7 +59,7 @@ void Fantasma::update()
 		{
 			posicionX -= velocidadPatron;
 			Pxi = getPosicionX();
-			vistaX = 50;
+			//vistaX = 50;
 			if (Pxi <= Pf)
 			{
 				Pxi = Pf;
@@ -65,12 +76,12 @@ void Fantasma::update()
 	}
 	else
 	{
-		vistaY = 0;
+		//vistaY = 0;
 		if (Pyi < Pf)  //abajo
 		{
 			posicionY += velocidadPatron;
 			Pyi = getPosicionY();
-			vistaX = 50;
+			//vistaX = 50;
 			if (Pyi >= Pf)
 			{
 				Pyi = Pf;
@@ -83,7 +94,7 @@ void Fantasma::update()
 		{
 			posicionY -= velocidadPatron;
 			Pyi = getPosicionY();
-			vistaX = 0;
+			//vistaX = 0;
 			if (Pyi <= Pf)
 			{
 				Pyi = Pf;
@@ -99,3 +110,17 @@ void Fantasma::update()
 		}
 	}
 }
+
+void Fantasma::setTile(Tile* _tileNuevo) {
+	if (tileActual != nullptr)
+		tileActual->setFantasma(nullptr);
+
+	tileActual = _tileNuevo;
+
+	if (tileActual != nullptr) {
+		tileActual->setFantasma(this);
+
+		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
+		posicionY = tileActual->getPosicionY() * Tile::altoTile;
+	}
+};
