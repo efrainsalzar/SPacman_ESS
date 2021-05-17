@@ -39,7 +39,7 @@ bool MapGenerator::load(string path)
 			{
 			case 'x':
 				objetoNuevo = new Pared(tileNuevo, textureManager->getTexture("pared"), x * Tile::altoTile, y * Tile::altoTile, 25, 25, anchoPantalla, altoPantalla);
-				objetoNuevo->setParametrosAnimacion(1);
+				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case '.':
 				objetoNuevo = new Moneda(tileNuevo, textureManager->getTexture("moneda"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla);
