@@ -3,8 +3,16 @@
 Moneda::Moneda(Tile* _tile, Texture* _monedaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla) :
 	GameObject(_monedaTextura, _posicionX, _posicionY, _ancho, _alto, _anchoPantalla, _altoPantalla)
 {
-	tileActual = _tile;
+	texturaAnimacion = new TextureAnimation();
+	texturaAnimacion->setTexture(_monedaTextura);
+	texturaAnimacion->addCuadroAnimacion("moneda", new SDL_Rect({ 0,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("moneda", new SDL_Rect({ 25,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("moneda", new SDL_Rect({ 50,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("moneda", new SDL_Rect({ 75,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("moneda", new SDL_Rect({ 100,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("moneda", new SDL_Rect({ 125,0,25,25 }));
 
+	tileActual = _tile;
 	if (tileActual != nullptr) {
 		tileActual->setMoneda(this);
 
@@ -35,4 +43,9 @@ void Moneda::setTile(Tile* _tileNuevo) {
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
 	}
+}
+void Moneda::render() {
+	SDL_Rect* cuadroAnimacion = new SDL_Rect();
+	cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("moneda")[numeroFrame];
+	texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
 }

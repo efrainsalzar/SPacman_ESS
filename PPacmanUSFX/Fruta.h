@@ -54,7 +54,7 @@ public:
 	//void handleEvent(SDL_Event& e);
 
 	// Mostrar u ocultar fruta
-	void update();
+	void update() override;
 	// Renderizar imagen fruta
 	//void render();
 

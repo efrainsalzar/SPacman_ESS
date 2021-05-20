@@ -28,8 +28,8 @@ Pacman::Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posici
 		posicionY = 0;
 	}
 
-	direccionActual = MOVE_RIGHT;
-	direccionSiguiente = MOVE_RIGHT;
+	direccionActual = MOVE_UP;
+	direccionSiguiente = MOVE_UP;
 
 
 	// Inicializa propiedade de de pacman

@@ -3,6 +3,8 @@
 #include "GameObject.h"
 #include "Texture.h"
 #include "TileGraph.h"
+#include "TextureManager.h"
+#include "TextureAnimation.h"
 
 enum PODER_MONEDA {
     PODER_MONEDA_NINGUNO,
@@ -21,6 +23,8 @@ private:
     int tiempoPoderMoneda;
     Tile* tileActual;
 
+    TextureAnimation* texturaAnimacion;
+
 public:
     Moneda(Tile* _tile, Texture* _monedaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla);
 
@@ -33,4 +37,7 @@ public:
     void setTipoPoderMoneda(PODER_MONEDA _poderMoneda) { tipoPoderMoneda = _poderMoneda; }
     void setTiempoPoderMoneda(int _tiempoPoderMoneda) { tiempoPoderMoneda = _tiempoPoderMoneda; }
     void setTile(Tile* _tileNuevo);
+
+    //metodos varios
+    void render()override;
 };

@@ -98,11 +98,14 @@ bool Fantasma::Avanzar(MoveDirection _direccionNueva) {
 
 void Fantasma::update()
 {
+	int direction;
+
 	if (enMovimiento) {
 		GameObject::update();
 	}
 	else {
-		direccionSiguiente = MoveDirection(rand() % 6);
+		direccionSiguiente = MoveDirection(rand() % 5);
+
 	}
 
 	// Cambiar de tile/direccion
@@ -121,18 +124,36 @@ void Fantasma::update()
 	else {
 		switch (direccionActual)
 		{
-		case MOVE_UP:
+		case MOVE_UP: {
 			posicionY = max(posicionY - velocidadPatron, tileSiguiente->getPosicionY() * Tile::altoTile);
+			direction = (rand() % 5);
+			if ((direction == 2) || (direction == 3)) {
+				direccionSiguiente = MoveDirection(direction);
+			}
 			break;
+		}
 		case MOVE_DOWN:
 			posicionY = min(posicionY + velocidadPatron, tileSiguiente->getPosicionY() * Tile::altoTile);
+			direction = (rand() % 5);
+			if ((direction == 2) || (direction == 3)) {
+				direccionSiguiente = MoveDirection(direction);
+			}	
 			break;
 		case MOVE_LEFT:
 			posicionX = max(posicionX - velocidadPatron, tileSiguiente->getPosicionX() * Tile::anchoTile);
+			direction = (rand() % 5);
+			if ((direction == 0) || (direction == 1)) {
+				direccionSiguiente = MoveDirection(direction);
+			}
 			break;
-		case MOVE_RIGHT:
+		case MOVE_RIGHT: {
 			posicionX = min(posicionX + velocidadPatron, tileSiguiente->getPosicionX() * Tile::anchoTile);
-			break;
+			direction = (rand() % 5);
+			if ((direction == 0) || (direction == 1)) {
+				direccionSiguiente = MoveDirection(direction);
+			}
+			break; 
+		}
 		}
 
 		if ((direccionActual == MOVE_DOWN || direccionActual == MOVE_UP) && posicionY == tileSiguiente->getPosicionY() * Tile::altoTile)
@@ -141,78 +162,6 @@ void Fantasma::update()
 		if ((direccionActual == MOVE_LEFT || direccionActual == MOVE_RIGHT) && posicionX == tileSiguiente->getPosicionX() * Tile::anchoTile)
 			setTile(tileSiguiente);
 	}
-
-
-	//if (sw)
-	//{
-	//	if (Pxi < Pf) //derecha
-	//	{
-	//		posicionX += velocidadPatron;
-	//		Pxi = getPosicionX();
-	//		direccionActual = MOVE_RIGHT;
-
-	//		if (Pxi >= Pf)
-	//		{
-	//			Pxi = Pf;
-	//			Pf = rand() % ((altoPantalla - alto) - 0 + 1) + 0; //formula
-	//			sw = false;
-	//		}
-	//	}
-	//	if (Pxi > Pf) //izquierda
-	//	{
-	//		posicionX -= velocidadPatron;
-	//		Pxi = getPosicionX();
-	//		direccionActual = MOVE_LEFT;
-	//		if (Pxi <= Pf)
-	//		{
-	//			Pxi = Pf;
-	//			Pf = rand() % ((altoPantalla - alto) - 0 + 1) + 0; //formula
-	//			sw = false;
-	//		}
-	//	}
-	//	if (Pxi == Pf)
-	//	{
-	//		Pxi = Pf;
-	//		Pf = rand() % ((altoPantalla - alto) - 0 + 1) + 0; //formula
-	//		sw = false;
-	//	}
-	//}
-	//else
-	//{
-	//	if (Pyi < Pf)  //abajo
-	//	{
-	//		posicionY += velocidadPatron;
-	//		Pyi = getPosicionY();
-	//		direccionActual = MOVE_DOWN;
-	//		if (Pyi >= Pf)
-	//		{
-	//			Pyi = Pf;
-	//			Pf = rand() % ((anchoPantalla - ancho) - 0 + 1) + 0; //formula
-	//			sw = true;
-	//		}
-
-	//	}
-	//	if (Pyi > Pf) //arriba
-	//	{
-	//		posicionY -= velocidadPatron;
-	//		Pyi = getPosicionY();
-	//		direccionActual = MOVE_UP;
-	//		if (Pyi <= Pf)
-	//		{
-	//			Pyi = Pf;
-	//			Pf = rand() % ((anchoPantalla - ancho) - 0 + 1) + 0; //formula
-	//			sw = true;
-	//		}
-	//	}
-	//	if (Pyi == Pf)
-	//	{
-	//		Pyi = Pf;
-	//		Pf = rand() % ((anchoPantalla - ancho) - 0 + 1) + 0; //formula
-	//		sw = true;
-	//	}
-	//}
-
-
 }
 void Fantasma::render() 
 {
