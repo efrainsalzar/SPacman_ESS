@@ -26,15 +26,23 @@ int GameManager::onExecute() {
 	SDL_Event Event;
 
 	while (juego_en_ejecucion) {
+
+		for (int i = 0; i < actoresJuego.size(); i++) {
+			if (actoresJuego[i]->getEliminar()) {
+				actoresJuego.erase(remove(actoresJuego.begin(), actoresJuego.end(), actoresJuego[i]), actoresJuego.end());
+			}
+		}
+
 		while (SDL_PollEvent(&Event)) {
 			onEvent(&Event);
 			for (int i = 0; i < actoresJuego.size(); i++) {
 				actoresJuego[i]->handleEvent(&Event);
 			}
 		}
+		auto odob = actoresJuego[3]->getIdObjeto();
 
 		////Clear screen
-		SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0x00, 0x00);
+		SDL_SetRenderDrawColor(gRenderer, 0x00,0x00, 0x00,0x00);
 		SDL_RenderClear(gRenderer);
 
 		//Update screen

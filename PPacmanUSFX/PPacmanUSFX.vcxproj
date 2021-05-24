@@ -28,6 +28,7 @@
     <ClCompile Include="Moneda.cpp" />
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="Pared.cpp" />
+    <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureAnimation.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -44,6 +45,8 @@
     <ClInclude Include="MoveDirection.h" />
     <ClInclude Include="Pacman.h" />
     <ClInclude Include="Pared.h" />
+    <ClInclude Include="PathFinder.h" />
+    <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureAnimation.h" />
     <ClInclude Include="TextureManager.h" />

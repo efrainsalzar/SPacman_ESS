@@ -37,6 +37,7 @@ private:
 
 public:
     vector<GameObject*> actoresJuego;
+    list<GameObject*> ActoresJuego;
     MapGenerator* generadorNivelJuego;
     TextureManager* textureManager;
 public:

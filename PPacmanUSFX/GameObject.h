@@ -39,12 +39,13 @@ protected:
 	int numeroFrame;
 	int contadorFrames;
 	int framesMovimiento;
-	//int vistaX = 0; int vistaY = 0;
+
+	SDL_Rect* colision;
 
 public:
 	//Constructores y destructores
 	GameObject(Texture* _textura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla);
-
+	~GameObject() {};
 	//Metodos accesores
 	int getIdObjeto() { return idObjeto; }
 	int getPosicionX() { return posicionX; }
@@ -64,16 +65,20 @@ public:
 	void setAnchoPantalla(int _anchoPantalla) { anchoPantalla = _anchoPantalla; }
 	void setAltoPantalla(int _altoPantalla) { altoPantalla = _altoPantalla; }
 	void setEliminar(bool _eliminar) { eliminar = _eliminar; }
-	void eliminarGameObject() { eliminar = true; }
 	void setEnMovimiento(bool _enMovimiento) { enMovimiento = _enMovimiento; }
 
 	// Metodos varios
 	void setParametrosAnimacion(int _framesMovimiento) { framesMovimiento = _framesMovimiento; }
+	virtual SDL_Rect* getColision() { return colision; }
+	bool revisarColision(const SDL_Rect* _otraColision);
+	bool revisarColision(const SDL_Rect* _colision1, const SDL_Rect* _colision2);
+
 	// Renderizar imagen
 	virtual void render();
 	virtual void update();
 	virtual void handleEvent(SDL_Event* event) {};
-	//virtual void move() {};
-	//virtual void mostrar() {};
+
+	virtual void free() {};
+	virtual void borrarGameObject() { eliminar = true; }
 
 };

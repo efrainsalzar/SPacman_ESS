@@ -19,6 +19,7 @@ GameObject::GameObject(Texture* _textura, int _posicionX, int _posicionY, int _a
 	numeroFrame = 0;
 	contadorFrames = 0;
 	framesMovimiento = 1;
+	colision = new SDL_Rect({ _posicionX,_posicionY, _ancho, _alto });
 }
 
 void GameObject::render()
@@ -27,6 +28,34 @@ void GameObject::render()
 
 	// Renderizar en la pantalla
 	textura->render(getPosicionX(), getPosicionY(), &renderQuad);
+}
+
+bool GameObject::revisarColision( const SDL_Rect* _otraColision) 
+{
+	if (colision->x + colision->w < _otraColision->x)
+		return false;
+	if (colision->y + colision->h < _otraColision->y)
+		return false;
+	if (_otraColision->x + _otraColision->w < colision->x)
+		return false;
+	if (_otraColision->y + _otraColision->h < colision->y)
+		return false;
+	
+	return true;
+}
+
+bool GameObject::revisarColision(const SDL_Rect* _colision1, const SDL_Rect* _colision2) 
+{
+	if (_colision2->x + _colision2->w < _colision1->x)
+		return false;
+	if (_colision2->y + _colision2->h < _colision1->y)
+		return false;
+	if (_colision1->x + _colision1->w < _colision2->x)
+		return false;
+	if (_colision1->y + _colision1->h < _colision2->y)
+		return false;
+
+	return true;
 }
 
 void GameObject::update() {

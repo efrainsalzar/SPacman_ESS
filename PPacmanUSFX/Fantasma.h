@@ -10,6 +10,8 @@
 #include "TileGraph.h"
 #include "MoveDirection.h"
 #include "TextureAnimation.h"
+#include "PathFinder.h"
+#include "Pacman.h"
 
 
 using namespace std;
@@ -29,6 +31,11 @@ private:
 	MoveDirection direccionSiguiente;
 
 	TextureAnimation* texturaAnimacion;
+
+	bool Avanzar(MoveDirection _direccionNueva);
+
+	vector<Tile*> camino;
+
 public:
 	//Constructores y destructores
 	Fantasma(Tile* _tile, Texture* _fantasmaTexture, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
@@ -46,9 +53,10 @@ public:
 	void setTileSiguiente(Tile* _tileNuevoSiguiente) { tileSiguiente = _tileNuevoSiguiente; }
 
 	// Metodos varios
-	bool Avanzar(MoveDirection _direccionNueva);
+
 
 	// Actualizar datos fantasma
 	void update() override;
 	void render() override;
+	static bool AvoidInPathFinder(Tile* _tile);
 };

@@ -24,10 +24,14 @@ Moneda::Moneda(Tile* _tile, Texture* _monedaTextura, int _posicionX, int _posici
 		posicionY = 0;
 	}
 
+
 	// Inicializa propiedade de de pacman
-	valor = 1;
-	tipoPoderMoneda = PODER_MONEDA_NINGUNO;
-	tiempoPoderMoneda = 0;
+	//valor = 1;
+	//tipoPoderMoneda = PODER_MONEDA_NINGUNO;
+	//tiempoPoderMoneda = 0;
+}
+Moneda::~Moneda() {
+	free();
 }
 
 void Moneda::setTile(Tile* _tileNuevo) {
@@ -42,10 +46,20 @@ void Moneda::setTile(Tile* _tileNuevo) {
 
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
+
+		//colision.x = posicionX;
+		//colision.y = posicionY;
 	}
 }
+
 void Moneda::render() {
 	SDL_Rect* cuadroAnimacion = new SDL_Rect();
 	cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("moneda")[numeroFrame];
 	texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
+}
+
+void Moneda::borrarGameObject() {
+	GameObject::borrarGameObject();
+	tileActual->setMoneda(nullptr);
+
 }

@@ -38,7 +38,7 @@ public:
 	void setPacman(Pacman* _pacman) { pacman = _pacman; }
 	void setFantasma(Fantasma* _fantasma) { fantasma = _fantasma; }
 	void setFruta(Fruta* _fruta) { fruta = _fruta; }
-	void setMoneda(Moneda* _moneda) { moneda = moneda; }
+	void setMoneda(Moneda* _moneda) { moneda = _moneda; }
 	void setPared(Pared* _pared) { pared = _pared; }
 	void setPosicionX(int _posicionX) { posicionX = _posicionX; }
 	void setPosicionY(int _posicionY) { posicionY = _posicionY; }

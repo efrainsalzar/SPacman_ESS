@@ -5,6 +5,8 @@
 
 #include "GameObject.h"
 #include "TileGraph.h"
+#include "Tile.h"
+#include "TextureAnimation.h"
 
 using namespace std;
 
@@ -21,15 +23,12 @@ enum TIPO_FRUTA {
 class Fruta : public GameObject
 {
 private:
+	int i = 0;
 	TIPO_FRUTA tipoFruta;
 
-	int tiempoVisible;
-	int tiempoNoVisible;
-
-	int contadorTiempoVisible;
-	int contadorTiempoNoVisible;
-	int numeroFrutaVisible;
 	Tile* tileActual;
+
+	TextureAnimation* texturaAnimacion;
 
 public:
 	//Constructores y destructores
@@ -39,24 +38,19 @@ public:
 	//Metodos accesores
 
 	TIPO_FRUTA getTipoFruta() { return tipoFruta; }
-	int getTiempoVisible() { return tiempoVisible; }
-	int getTiempoNoVisible() { return tiempoNoVisible; }
 	Tile* getTile() { return tileActual; }
 
 	void setTipoFruta(TIPO_FRUTA _tipoFruta) { tipoFruta = _tipoFruta; }
-	void setTiempoVisble(int _tiempoVisible) { tiempoVisible = _tiempoVisible; }
-	void setTiempoNoVisble(int _tiempoNoVisible) { tiempoNoVisible = _tiempoNoVisible; }
 	void setTile(Tile* tileNuevo);
 
 	// Metodos varios
-
 	// Manejador de eventos de la fruta
 	//void handleEvent(SDL_Event& e);
-
+	
 	// Mostrar u ocultar fruta
 	void update() override;
 	// Renderizar imagen fruta
-	//void render();
+	void render();
 
 };
 

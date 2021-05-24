@@ -6,6 +6,10 @@ using namespace std;
 Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla):
 	GameObject(_frutaTextura, _posicionX, _posicionY, _ancho, _alto, _anchoPantalla, _altoPantalla) {
 
+	texturaAnimacion = new TextureAnimation();
+	texturaAnimacion->setTexture(_frutaTextura);
+	texturaAnimacion->addCuadroAnimacion("frutita", new SDL_Rect({ 0,0,25,25 }));
+
 	tileActual = _tile;
 
 	if (tileActual != nullptr) {
@@ -23,12 +27,7 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 	tipoFruta = TIPO_FRUTA_GUINDA;
 
 	visible = false;
-
-	tiempoVisible = 100;
-	tiempoNoVisible = 150;
-	contadorTiempoVisible = 0;
-	contadorTiempoNoVisible = 0;
-	int numeroFrutaVisible = 0;
+	//Tile* tileDestino = nullptr;
 }
 
 
@@ -36,25 +35,36 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 
 void Fruta::update()
 {
-	if (contadorTiempoVisible >= tiempoVisible) {
-		visible = false;
-		if (contadorTiempoNoVisible >= tiempoNoVisible) {
-			//posicionX = 1 + rand() % anchoPantalla;
-			//posicionY = 1 + rand() % altoPantalla;
-			contadorTiempoVisible = 0;
-			contadorTiempoNoVisible = 0;
+
+	
+	if (!visible){
+		//cout << "No"<< endl;
+		if (i >= 100) {
+			posicionX = (rand() % 40) * 25;
+			posicionY = (rand() % 32) * 25;
+			cout << posicionX << "<>" << posicionY << endl;
 			visible = true;
-			//numeroFrutaVisible = rand() % frutasTextures.size();
-			//numeroFrutaVisible = rand() % 4;
+			i = 0;
+
 		}
-		else {
-			contadorTiempoNoVisible++;
-			//contadorTiempoNoVisible = contadorTiempoNoVisible + 1;
-		}
+		else
+			i++;
 	}
 	else {
-		contadorTiempoVisible++;
+		//cout << "V" << endl;
+		if (i == 0) {
+			render();
+			
+			i++;
+		}else
+			if (i > 100) {
+				visible = false;
+				i = 0;
+			}
+			else
+				i++;
 	}
+
 }
 
 void Fruta::setTile(Tile* _tileNuevo){
@@ -67,4 +77,9 @@ void Fruta::setTile(Tile* _tileNuevo){
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
 	}
+}
+void Fruta::render() {
+	SDL_Rect* cuadroAnimacion = new SDL_Rect();
+	cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("frutita")[numeroFrame];
+	texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
 }

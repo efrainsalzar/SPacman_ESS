@@ -13,20 +13,20 @@ x.xxxxxxx.xx.x   x.x.x   x.xx.xxxxxxx.x
 x.xx.........xxxxx.x.xxxxx.........xx.x
 xs...xxxx.xx...............xx.xxxx...sx
 xxxxxx  x.xx.xx.xxx xxx.xx.xx.x  xxxxxx
-x       xs...xx.x     x.xx...sx       x
-x       xxxx.xx.x BCIPx.xx.xxxx       x
-x          x.xx.x     x.xx.x          x
+x       xs...xx.x  B  x.xx...sx       x
+x       xxxx.xx.x  C  x.xx.xxxx       x
+x          x.xx.x PI  x.xx.x          x
 x          x.xx.xxxxxxx.xx.x          x
 x          x...............x          x
 x          x.xx.xxxxxxx.xx.x          x
 x          x.xx.xxxxxxx.xx.x          x
 x          x.xx.........xx.x          x
 x          x.xx.xxx.xxx.xx.x          x
-xxxxxxxxxxxx.xx.xxx.xxx.xx.xxxxxxxxxxxx
+xxxxxxxxxxxx.xx.xxxxxxx.xx.xxxxxxxxxxxx
 xs.................p.................sx
 x.xxxxxxx.xx.xxxxxx.xxxxxx.xx.xxxxxxx.x
 x......xx.xx.....sx.xs.....xx.xx......x
 xxxxxx.xx.xx.xxxx.x.x.xxxx.xx.xx.xxxxxx
 x......xx.xx.xxxx.x.x.xxxx.xx.xx......x
-x.xxxxsxx.xx...............xx.xxsxxxx.x
+x.xxxxs...xx...............xx...sxxxx.x
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
