@@ -14,11 +14,21 @@ Pacman::Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posici
 	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 50, 0, 25, 25 }));
 	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 75, 0, 25, 25 }));
 
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,50,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,50,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,50,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,50,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,75,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,75,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,75,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,75,25,25 }));
+
 	tileActual = _tile;
 	tileSiguiente = nullptr;
 
 	if (tileActual != nullptr) {
 		tileActual->setPacman(this);
+		tileSiguiente = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
 
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
@@ -27,8 +37,6 @@ Pacman::Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posici
 		posicionX = 0;
 		posicionY = 0;
 	}
-//	colision.w = ancho;
-//	colision.h = alto;
 
 	direccionActual = MOVE_UP;
 	direccionSiguiente = MOVE_UP;
@@ -124,10 +132,17 @@ void Pacman::update()
 			tileSiguiente->getMoneda()->borrarGameObject();
 		}
 	}
+	if (tileActual != nullptr && tileActual->getFruta() != nullptr) {
+		SDL_Rect* comer = new SDL_Rect({ posicionX, posicionY, ancho, alto, });
+
+		if (revisarColision(comer, tileSiguiente->getFruta()->getColision())) {
+			tileSiguiente->getFruta()->borrarGameObject();
+		}
+	}
 
 	// Animacion de pacman
 	if (enMovimiento) {
-		GameObject::update();
+		GameObject::render();
 	}
 
 	// Cambiar de tile/direccion
@@ -173,7 +188,9 @@ void Pacman::update()
 void Pacman::render()
 {
 	SDL_Rect* cuadroAnimacion = new SDL_Rect();
-
+	if (kill) {
+		cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("dead")[numeroFrame];
+	}
 	switch (direccionActual) {
 	case MOVE_UP:
 		cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("arriba")[numeroFrame];
@@ -187,6 +204,7 @@ void Pacman::render()
 	case MOVE_RIGHT:
 		cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("derecha")[numeroFrame];
 		break;
+	 	
 	}
 
 	texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
@@ -194,8 +212,10 @@ void Pacman::render()
 
 void Pacman::borrarGameObject()
 {
+	kill = true;
 	GameObject::borrarGameObject();
 	tileActual->setPacman(nullptr);
 	SDL_Delay(1000);
+
 	exit(-1);
 }

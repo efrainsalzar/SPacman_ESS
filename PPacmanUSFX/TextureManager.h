@@ -13,10 +13,10 @@ private:
 	const string pathFantasma2 = "Resources/Clyde.bmp";
 	const string pathFantasma3 = "Resources/Inkey.bmp";
 	const string pathFantasma4 = "Resources/Pinky.bmp";
-	const string pathFruta = "Resources/fruta2.png";
+	const string pathFruta = "Resources/Frutas.bmp";
 	const string pathMoneda = "Resources/moneda2.1.bmp";
 	const string pathSuperMoneda = "Resources/moneda3.bmp";
-	const string pathPared = "Resources/wall.bmp";
+	const string pathPared = "Resources/wall3.bmp";
 
 	Texture* pacmanTexture;
 	Texture* fantasma1Texture;

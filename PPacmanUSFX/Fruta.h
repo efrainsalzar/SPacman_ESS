@@ -6,6 +6,7 @@
 #include "GameObject.h"
 #include "TileGraph.h"
 #include "Tile.h"
+#include "Texture.h"
 #include "TextureAnimation.h"
 
 using namespace std;
@@ -27,13 +28,14 @@ private:
 	TIPO_FRUTA tipoFruta;
 
 	Tile* tileActual;
+	Tile* tileSiguiente;
 
 	TextureAnimation* texturaAnimacion;
 
 public:
 	//Constructores y destructores
 	Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla);
-	//~Fruta();
+	~Fruta() {};
 
 	//Metodos accesores
 
@@ -51,6 +53,8 @@ public:
 	void update() override;
 	// Renderizar imagen fruta
 	void render();
+
+	void borrarGameObject() override;
 
 };
 

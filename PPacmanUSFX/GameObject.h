@@ -3,6 +3,7 @@
 #include <string>
 #include "Texture.h"
 
+
 using namespace std;
 
 class TileGraph;
@@ -35,6 +36,7 @@ protected:
 
 	// Textura para representacion grafica del objeto
 	Texture* textura;
+
 
 	int numeroFrame;
 	int contadorFrames;

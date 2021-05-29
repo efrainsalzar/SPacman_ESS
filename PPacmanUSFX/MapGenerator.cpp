@@ -54,25 +54,25 @@ bool MapGenerator::load(string path)
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'B':
-				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma1"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 1);
+				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma1"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'C':
-				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma2"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 1);
+				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma2"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'I':
-				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma3"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 1);
+				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma3"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'P':
-				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma4"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 1);
+				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma4"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
-			//case 'f':
-			//	objetoNuevo = new Fruta(tileNuevo, textureManager->getTexture("fruta"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla);
-			//	objetoNuevo->setParametrosAnimacion(1);
-			//	break;
+			case 'f':
+				objetoNuevo = new Fruta(tileNuevo, textureManager->getTexture("fruta"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla);
+				objetoNuevo->setParametrosAnimacion(1);
+				break;
 			}
 
 			// If the object was created, add it to the vector
@@ -92,10 +92,6 @@ bool MapGenerator::load(string path)
 
 void MapGenerator::populate(std::vector<GameObject*>& _vectorObjetosJuegoGM)
 {
-	/*for (unsigned int i = 0; i < vectorObjetosJuego.size(); i++) {
-		_vectorObjetosJuegoGM.push_back(vectorObjetosJuego[i]);
-	}*/
-
 	for (auto ivoj = vectorObjetosJuego.begin(); ivoj != vectorObjetosJuego.end(); ++ivoj) {
 		_vectorObjetosJuegoGM.push_back(*ivoj);
 	}

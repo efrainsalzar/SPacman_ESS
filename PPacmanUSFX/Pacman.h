@@ -6,6 +6,9 @@
 #include <SDL.h>
 
 #include "Moneda.h"
+#include "Fruta.h"
+#include "Fantasma.h"
+
 #include "GameObject.h"
 #include "Texture.h"
 #include "Tile.h"
@@ -30,12 +33,14 @@ private:
 	TextureAnimation* texturaAnimacion;
 
 	//SDL_Rect colision;
+	bool kill = false;
 
 public:
-	//Constructores y destructores
 	Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
-
+	//Constructores y destructores
+	//Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
 	//~Pacman();
+
 
 	//Metodos accesores
 

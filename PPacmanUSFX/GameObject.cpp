@@ -20,6 +20,7 @@ GameObject::GameObject(Texture* _textura, int _posicionX, int _posicionY, int _a
 	contadorFrames = 0;
 	framesMovimiento = 1;
 	colision = new SDL_Rect({ _posicionX,_posicionY, _ancho, _alto });
+
 }
 
 void GameObject::render()

@@ -11,12 +11,16 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 	texturaAnimacion->addCuadroAnimacion("frutita", new SDL_Rect({ 0,0,25,25 }));
 
 	tileActual = _tile;
+	tileSiguiente = nullptr;
 
 	if (tileActual != nullptr) {
 		tileActual->setFruta(this);
+		tileSiguiente = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
 
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
+		cout << tileActual << "-->" << posicionX << "<>" << posicionY << endl;
+
 	}
 	else {
 		posicionX = 0;
@@ -26,7 +30,7 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 	// Inicializa propiedade de la fruta
 	tipoFruta = TIPO_FRUTA_GUINDA;
 
-	visible = false;
+	visible = true;
 	//Tile* tileDestino = nullptr;
 }
 
@@ -35,34 +39,34 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 
 void Fruta::update()
 {
-
-	
-	if (!visible){
-		//cout << "No"<< endl;
-		if (i >= 100) {
-			posicionX = (rand() % 40) * 25;
-			posicionY = (rand() % 32) * 25;
-			cout << posicionX << "<>" << posicionY << endl;
-			visible = true;
+	//Tile* tileDestino = nullptr;
+	if (visible){
+		i++;
+		if (i > 100) {
+			visible = false;
 			i = 0;
-
 		}
-		else
-			i++;
 	}
 	else {
-		//cout << "V" << endl;
-		if (i == 0) {
-			render();
+		i++;
+		if (i > 100) {
+
+
+			posicionX = (rand() % 40)*25;
+			posicionY = (rand() % 32)*25;
+
+			cout << tileActual->getFruta() << "-->" << posicionX << "<>" << posicionY << endl;
+
+
+			//tileDestino = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
+			if (tileActual->getPared() != nullptr)	cout << "hay pared" << endl;
+			else cout << " no hay pared" << endl;
 			
-			i++;
-		}else
-			if (i > 100) {
-				visible = false;
-				i = 0;
-			}
-			else
-				i++;
+
+
+			visible = true;
+			i = 0;
+		}
 	}
 
 }
@@ -82,4 +86,10 @@ void Fruta::render() {
 	SDL_Rect* cuadroAnimacion = new SDL_Rect();
 	cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("frutita")[numeroFrame];
 	texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
+}
+
+void Fruta::borrarGameObject()
+{
+	GameObject::borrarGameObject();
+	tileActual->setFruta(nullptr);
 }
