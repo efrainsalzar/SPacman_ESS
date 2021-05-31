@@ -104,7 +104,6 @@ bool Pacman::tratarDeMover(MoveDirection _direccionNueva)
 		tileDestino = tileGraph->getTileEn(tileActual->getPosicionX() + 1, tileActual->getPosicionY());
 		break;
 	}
-
 	// Si el tile destino es nullptr, no se puede avanzar ahi
 	if (tileDestino == nullptr) {
 		setTileSiguiente(nullptr);
@@ -142,7 +141,7 @@ void Pacman::update()
 
 	// Animacion de pacman
 	if (enMovimiento) {
-		GameObject::render();
+		GameObject::update();
 	}
 
 	// Cambiar de tile/direccion

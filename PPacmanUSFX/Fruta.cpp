@@ -51,9 +51,17 @@ void Fruta::update()
 		i++;
 		if (i > 100) {
 
+			//posicionX=((rand() % 40) * 25);
+			//posicionY=((rand() % 32) * 25);
+			//cout << posicionX << "--" << posicionY;
+			tileActual->setPosicionX(rand() % 40);
+			tileActual->setPosicionY(rand() % 32);
 
-			posicionX = (rand() % 40)*25;
-			posicionY = (rand() % 32)*25;
+				tileActual->setFruta(nullptr);
+			tileActual = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
+
+			setTile(tileActual);
+
 
 			cout << tileActual->getFruta() << "-->" << posicionX << "<>" << posicionY << endl;
 

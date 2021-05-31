@@ -25,6 +25,7 @@ class Fruta : public GameObject
 {
 private:
 	int i = 0;
+	int Px, Py;
 	TIPO_FRUTA tipoFruta;
 
 	Tile* tileActual;
