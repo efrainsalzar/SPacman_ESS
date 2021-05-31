@@ -50,14 +50,14 @@ void Fruta::update()
 	else {
 		i++;
 		if (i > 100) {
-
+				tileActual->setFruta(nullptr);
 			//posicionX=((rand() % 40) * 25);
 			//posicionY=((rand() % 32) * 25);
 			//cout << posicionX << "--" << posicionY;
 			tileActual->setPosicionX(rand() % 40);
 			tileActual->setPosicionY(rand() % 32);
 
-				tileActual->setFruta(nullptr);
+
 			tileActual = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
 
 			setTile(tileActual);
@@ -67,13 +67,15 @@ void Fruta::update()
 
 
 			//tileDestino = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
-			if (tileActual->getPared() != nullptr)	cout << "hay pared" << endl;
-			else cout << " no hay pared" << endl;
-			
+			if (tileActual->getPared() != nullptr)
+				cout << "hay pared" << endl;
+			else {
+				cout << " no hay pared" << endl;
+				visible = true;
+				i = 0;
+			}
 
 
-			visible = true;
-			i = 0;
 		}
 	}
 
