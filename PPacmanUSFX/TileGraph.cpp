@@ -11,9 +11,10 @@ TileGraph::TileGraph()
 TileGraph::TileGraph(int _anchoTileGraph, int _altoTileGraph)
 {
 	for (int y = 0; y < _altoTileGraph; y++) {
-		for (int x = 0; x < _anchoTileGraph; x++) {
-			vectorTilesGraph.push_back(new Tile(x, y));
-		}
+			for (int x = 0; x < _anchoTileGraph; x++) {
+				vectorTilesGraph.push_back(new Tile(x, y));
+			}
+
 	}
 
 	anchoTileGraph = _anchoTileGraph;
@@ -27,9 +28,9 @@ void TileGraph::reconfigurar(int _anchoTileGraph, int _altoTileGraph)
 
 	// Establece la posicion de todos los tiles
 	for (int y = 0; y < _altoTileGraph; y++) {
-		for (int x = 0; x < _anchoTileGraph; x++) {
-			vectorTilesGraph.push_back(new Tile(x, y));
-		}
+			for (int x = 0; x < _anchoTileGraph; x++) {
+				vectorTilesGraph.push_back(new Tile(x, y));
+			}
 	}
 
 	anchoTileGraph = _anchoTileGraph;

@@ -25,7 +25,11 @@ class Fruta : public GameObject
 {
 private:
 	int i = 0;
-	int Px, Py;
+	int contadorTiempoVisible;
+	int contadorTiempoNoVisible;
+	int tiempoVisible;
+	int tiempoNoVisible;
+
 	TIPO_FRUTA tipoFruta;
 
 	Tile* tileActual;

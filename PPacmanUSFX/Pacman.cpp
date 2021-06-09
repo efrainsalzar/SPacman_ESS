@@ -123,19 +123,23 @@ bool Pacman::tratarDeMover(MoveDirection _direccionNueva)
 
 void Pacman::update()
 {
-	//comer monedas
+	// Pac-Man Comer
 	if (tileActual != nullptr && tileActual->getMoneda() != nullptr) {
-		SDL_Rect* comer = new SDL_Rect({ posicionX, posicionY, ancho, alto, });
+		SDL_Rect* comerMoneda = new SDL_Rect({ posicionX, posicionY, ancho, alto, });
 
-		if (revisarColision(comer, tileSiguiente->getMoneda()->getColision())) {
+		if (revisarColision(comerMoneda, tileSiguiente->getMoneda()->getColision())) {
 			tileSiguiente->getMoneda()->borrarGameObject();
 		}
+
+		//if (revisarColision(comerMoneda, tileActual->getMoneda()->getColision())) {
+		//	tileActual->getMoneda()->borrarGameObject();
+		//}
 	}
 	if (tileActual != nullptr && tileActual->getFruta() != nullptr) {
-		SDL_Rect* comer = new SDL_Rect({ posicionX, posicionY, ancho, alto, });
+		SDL_Rect* comerFruta = new SDL_Rect({ posicionX, posicionY, ancho, alto, });
 
-		if (revisarColision(comer, tileSiguiente->getFruta()->getColision())) {
-			tileSiguiente->getFruta()->borrarGameObject();
+		if (revisarColision(comerFruta, tileActual->getFruta()->getColision())) {
+			tileActual->getFruta()->borrarGameObject();
 		}
 	}
 

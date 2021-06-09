@@ -19,7 +19,7 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
-		cout << tileActual << "-->" << posicionX << "<>" << posicionY << endl;
+		//cout << tileActual << "-->" << posicionX << "<>" << posicionY << endl;
 
 	}
 	else {
@@ -31,7 +31,10 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 	tipoFruta = TIPO_FRUTA_GUINDA;
 
 	visible = true;
-	//Tile* tileDestino = nullptr;
+	tiempoVisible = 100;
+	tiempoNoVisible = 100;
+	contadorTiempoVisible = 0;
+	contadorTiempoNoVisible = 0;
 }
 
 
@@ -39,44 +42,62 @@ Fruta::Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY
 
 void Fruta::update()
 {
-	//Tile* tileDestino = nullptr;
-	if (visible){
-		i++;
-		if (i > 100) {
-			visible = false;
-			i = 0;
+	//if (visible){
+	//	i++;
+	//	if (i > 100) {
+	//		visible = false;
+	//		i = 0;
+	//	}
+	//}
+	//else {
+	//	i++;
+	//	if (i > 100) {
+	//		tileActual->setFruta(nullptr);
+
+	//		posicionX = (rand() % 40)*25;
+	//		posicionY = (rand() % 32)*25; 
+
+	//		//tileActual->setPosicionX(rand() % 40);
+	//		//tileActual->setPosicionY(rand() % 32);
+
+	//		setTile(tileActual);
+	//		//tileSiguiente = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
+
+	//		if (tileActual->getPared() != nullptr)
+	//			cout << "hay pared" << endl;
+
+	//		else {
+
+
+
+	//		cout << tileActual->getFruta() << "-->" << posicionX << "<>" << posicionY << endl;
+
+	//			cout << " no hay pared" << endl;
+	//			visible = true;
+	//			i = 0;
+	//		}
+
+
+	//	}
+	//}
+	if (contadorTiempoVisible >= tiempoVisible) {
+		visible = false;
+		if (contadorTiempoNoVisible >= tiempoNoVisible) {
+			posicionX = (1 + rand() % anchoPantalla);
+			posicionY = (1 + rand() % altoPantalla);
+			contadorTiempoVisible = 0;
+			contadorTiempoNoVisible = 0;
+			visible = true;
+			//numeroFrutaVisible = rand() % frutasTextures.size();
+			//numeroFrutaVisible = rand() % 4;
+		}
+		else {
+			contadorTiempoNoVisible++;
+			//contadorTiempoNoVisible = contadorTiempoNoVisible + 1;
 		}
 	}
 	else {
-		i++;
-		if (i > 100) {
-				tileActual->setFruta(nullptr);
-			//posicionX=((rand() % 40) * 25);
-			//posicionY=((rand() % 32) * 25);
-			//cout << posicionX << "--" << posicionY;
-			tileActual->setPosicionX(rand() % 40);
-			tileActual->setPosicionY(rand() % 32);
-
-
-			tileActual = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
-
-			setTile(tileActual);
-
-
-			cout << tileActual->getFruta() << "-->" << posicionX << "<>" << posicionY << endl;
-
-
-			//tileDestino = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY());
-			if (tileActual->getPared() != nullptr)
-				cout << "hay pared" << endl;
-			else {
-				cout << " no hay pared" << endl;
-				visible = true;
-				i = 0;
-			}
-
-
-		}
+		contadorTiempoVisible++;
 	}
 
 }
