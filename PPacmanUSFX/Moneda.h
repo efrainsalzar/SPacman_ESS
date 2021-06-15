@@ -17,7 +17,7 @@
 
 class Moneda : public GameObject
 {
-private:
+protected:
     //int valor;
     //PODER_MONEDA tipoPoderMoneda;
     //int tiempoPoderMoneda;
@@ -31,8 +31,8 @@ public:
 
     //static const int margen = 11;
 
-    Moneda(Tile* _tile, Texture* _monedaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla);
-    ~Moneda();
+    Moneda(Tile* _tile, Texture* _monedaTextura, int _posicionX, int _posicionY);
+    ~Moneda() {};
 
     //int getValor() { return valor; }
     //PODER_MONEDA getTipoPoderMoneda() { return tipoPoderMoneda; }
@@ -46,7 +46,7 @@ public:
     void setTile(Tile* _tileNuevo);
 
     //metodos varios
-    void render();
+    virtual void render() {};
     void borrarGameObject() override;
 
 };

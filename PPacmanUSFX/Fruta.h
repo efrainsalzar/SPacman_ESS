@@ -23,7 +23,7 @@ enum TIPO_FRUTA {
 
 class Fruta : public GameObject
 {
-private:
+protected:
 	int i = 0;
 	int contadorTiempoVisible;
 	int contadorTiempoNoVisible;
@@ -39,7 +39,7 @@ private:
 
 public:
 	//Constructores y destructores
-	Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla);
+	Fruta(Tile* _tile, Texture* _frutaTextura, int _posicionX, int _posicionY);
 	~Fruta() {};
 
 	//Metodos accesores
@@ -52,12 +52,13 @@ public:
 
 	// Metodos varios
 	// Manejador de eventos de la fruta
+	// 
 	//void handleEvent(SDL_Event& e);
 	
 	// Mostrar u ocultar fruta
-	void update() override;
+	virtual void update() {};
 	// Renderizar imagen fruta
-	void render();
+	virtual void render() {};
 
 	void borrarGameObject() override;
 

@@ -3,13 +3,10 @@
 int GameObject::numeroObjetosCreados = 0;
 TileGraph* GameObject::tileGraph = nullptr;
 
-GameObject::GameObject(Texture* _textura, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla) {
+GameObject::GameObject(Texture* _textura, int _posicionX, int _posicionY) {
 	posicionX = _posicionX;
 	posicionY = _posicionY;
-	ancho = _ancho;
-	alto = _alto;
-	anchoPantalla = _anchoPantalla;
-	altoPantalla = _altoPantalla;
+
 	visible = true;
 	eliminar = false;
 	enMovimiento = false;
@@ -19,7 +16,7 @@ GameObject::GameObject(Texture* _textura, int _posicionX, int _posicionY, int _a
 	numeroFrame = 0;
 	contadorFrames = 0;
 	framesMovimiento = 1;
-	colision = new SDL_Rect({ _posicionX,_posicionY, _ancho, _alto });
+	colision = new SDL_Rect({ _posicionX,_posicionY, getAncho(), getAlto() });
 
 }
 

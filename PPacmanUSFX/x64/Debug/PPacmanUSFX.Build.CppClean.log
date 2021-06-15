@@ -5,6 +5,7 @@ e:\sis457\pac.man\ppacmanusfx\x64\debug\tile.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\texturemanager.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\textureanimation.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\texture.obj
+e:\sis457\pac.man\ppacmanusfx\x64\debug\pathfinder.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\pared.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\pacman.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\moneda.obj
@@ -14,10 +15,12 @@ e:\sis457\pac.man\ppacmanusfx\x64\debug\gameobject.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\gamemanager.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\fruta.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\fantasma.obj
-e:\sis457\pac.man\ppacmanusfx\x64\debug\pathfinder.obj
+e:\sis457\pac.man\ppacmanusfx\x64\debug\factorypacmanclasico.obj
+e:\sis457\pac.man\ppacmanusfx\x64\debug\factory.obj
 e:\sis457\pac.man\x64\debug\ppacmanusfx.exe
 e:\sis457\pac.man\x64\debug\ppacmanusfx.ilk
 e:\sis457\pac.man\x64\debug\ppacmanusfx.pdb
+e:\sis457\pac.man\ppacmanusfx\x64\debug\factoryfantasmaclasico.obj
 e:\sis457\pac.man\ppacmanusfx\x64\debug\ppacmanusfx.tlog\cl.command.1.tlog
 e:\sis457\pac.man\ppacmanusfx\x64\debug\ppacmanusfx.tlog\cl.read.1.tlog
 e:\sis457\pac.man\ppacmanusfx\x64\debug\ppacmanusfx.tlog\cl.write.1.tlog

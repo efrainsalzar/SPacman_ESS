@@ -19,15 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Factory.cpp" />
+    <ClCompile Include="FactoryPacmanClasico.cpp" />
     <ClCompile Include="Fantasma.cpp" />
+    <ClCompile Include="FantasmaClasico.cpp" />
     <ClCompile Include="Fruta.cpp" />
+    <ClCompile Include="FrutaClasico.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapGenerator.cpp" />
     <ClCompile Include="Moneda.cpp" />
+    <ClCompile Include="MonedaClasico.cpp" />
     <ClCompile Include="Pacman.cpp" />
+    <ClCompile Include="PacmanClasico.cpp" />
     <ClCompile Include="Pared.cpp" />
+    <ClCompile Include="ParedClasico.cpp" />
     <ClCompile Include="PathFinder.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureAnimation.cpp" />
@@ -36,15 +43,22 @@
     <ClCompile Include="TileGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="FactoryPacmanClasico.h" />
     <ClInclude Include="Fantasma.h" />
+    <ClInclude Include="FantasmaClasico.h" />
     <ClInclude Include="Fruta.h" />
+    <ClInclude Include="FrutaClasico.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="MapGenerator.h" />
     <ClInclude Include="Moneda.h" />
+    <ClInclude Include="MonedaClasico.h" />
     <ClInclude Include="MoveDirection.h" />
     <ClInclude Include="Pacman.h" />
+    <ClInclude Include="PacmanClasico.h" />
     <ClInclude Include="Pared.h" />
+    <ClInclude Include="ParedClasico.h" />
     <ClInclude Include="PathFinder.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Texture.h" />

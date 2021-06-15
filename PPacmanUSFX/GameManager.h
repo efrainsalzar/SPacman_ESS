@@ -17,11 +17,13 @@
 #include "TileGraph.h"
 #include "TextureManager.h"
 
+#include "FactoryPacmanClasico.h"
+
 using namespace std;
 
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 975;
+const int SCREEN_WIDTH = 1350;
 const int SCREEN_HEIGHT = 825;
 
 class GameManager
@@ -35,13 +37,17 @@ private:
     //The window renderer
     SDL_Renderer* gRenderer;
 
-public:
     vector<GameObject*> actoresJuego;
     list<GameObject*> ActoresJuego;
     MapGenerator* generadorNivelJuego;
     TextureManager* textureManager;
-public:
+    Factory* tipoFabrica;
+
     GameManager();
+    static GameManager* instancia;
+
+public:
+    static GameManager* crearInstancia();
     int onExecute();
     bool onInit();
     void onEvent(SDL_Event* Event);

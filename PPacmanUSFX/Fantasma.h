@@ -17,12 +17,9 @@
 using namespace std;
 
 class Fantasma : public GameObject {
-private:
+protected:
 	//Velocidad a la que mueve el fantasma en cualquier eje
-	int velocidadPatron;
-
-	bool sw;
-	int Pxi; int  Pf; int Pyi;
+	int velocidad;
 
 	Tile* tileActual;
 	Tile* tileSiguiente;
@@ -32,23 +29,21 @@ private:
 
 	TextureAnimation* texturaAnimacion;
 
-	bool Avanzar(MoveDirection _direccionNueva);
-
-	vector<Tile*> camino;
+	//bool Avanzar(MoveDirection _direccionNueva) {};
 
 public:
 	//Constructores y destructores
-	Fantasma(Tile* _tile, Texture* _fantasmaTexture, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
+	Fantasma(Tile* _tile, Texture* _fantasmaTexture, int _posicionX, int _posicionY, int _velocidad);
 	//~Fantasma();
 
 	//Metodos accesores
 
 
-	int getVelocidadPatron() { return velocidadPatron; }
+	int getVelocidadPatron() { return velocidad; }
 	Tile* getTile() { return tileActual; }
 	Tile* getTileSiguiente() { return tileSiguiente; }
 
-	void setVelocidadPatron(int _velocidadPatron) { velocidadPatron = _velocidadPatron; }
+	void setVelocidadPatron(int _velocidad) { velocidad = _velocidad; }
 	void setTile(Tile* _tileNuevo);
 	void setTileSiguiente(Tile* _tileNuevoSiguiente) { tileSiguiente = _tileNuevoSiguiente; }
 
@@ -56,7 +51,8 @@ public:
 
 
 	// Actualizar datos fantasma
-	void update() override;
-	void render() override;
-	static bool AvoidInPathFinder(Tile* _tile);
+	virtual void update() {};
+	virtual void render() {};
+
+	//virtual bool AvoidInPathFinder(Tile* _tile) {};
 };

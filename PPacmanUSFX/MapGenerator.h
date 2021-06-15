@@ -16,6 +16,9 @@
 #include "TileGraph.h"
 #include "TextureManager.h"
 #include "TextureAnimation.h"
+
+#include "Factory.h"
+#include "FactoryPacmanClasico.h"
 using namespace std;
 
 class MapGenerator
@@ -24,12 +27,13 @@ private:
 	vector<GameObject*> vectorObjetosJuego;
 	TileGraph* tileGraph;
 	TextureManager* textureManager;
+	Factory* factory;
 
 
 	int anchoPantalla;
 	int altoPantalla;
 public:
-	MapGenerator(TileGraph* _tileGraph, TextureManager* _textureManager, int _anchoPantalla, int _altoPantalla);
+	MapGenerator(TileGraph* _tileGraph, TextureManager* _textureManager, int _anchoPantalla, int _altoPantalla, Factory* _factory);
 
 	// carga el archivo con el mapa del nivel y todos los objetos
 	bool load(string path);

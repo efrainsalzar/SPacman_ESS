@@ -2,11 +2,21 @@
 
 using namespace std;
 
+GameManager* GameManager::instancia = nullptr;
+
+GameManager* GameManager::crearInstancia() {
+	if (instancia == nullptr) {
+		instancia = new GameManager();
+	}
+	return instancia;
+}
+
 GameManager::GameManager() {
 	gWindow = nullptr;
 	gRenderer = nullptr;
 
 	juego_en_ejecucion = true;
+	tipoFabrica = new FactoryPacmanClasico;
 }
 
 int GameManager::onExecute() {
@@ -16,11 +26,11 @@ int GameManager::onExecute() {
 
 	srand(time(nullptr));
 
-	TileGraph tileGraphGM(40, 34);
+	TileGraph tileGraphGM(54, 33);
 	textureManager = new TextureManager();
 	GameObject::tileGraph = &tileGraphGM;
-	generadorNivelJuego = new MapGenerator(&tileGraphGM, textureManager, SCREEN_WIDTH, SCREEN_HEIGHT);
-	generadorNivelJuego->load("Resources/mapa.txt");
+	generadorNivelJuego = new MapGenerator(&tileGraphGM, textureManager, SCREEN_WIDTH, SCREEN_HEIGHT, tipoFabrica);
+	generadorNivelJuego->load("Resources/mapa2.txt");
 	generadorNivelJuego->populate(actoresJuego);
 
 	SDL_Event Event;

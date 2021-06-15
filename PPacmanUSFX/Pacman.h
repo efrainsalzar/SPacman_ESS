@@ -20,7 +20,7 @@ using namespace std;
 
 class Pacman : public GameObject
 {
-private:
+protected:
 	Tile* tileActual;
 	Tile* tileSiguiente;
 
@@ -28,43 +28,40 @@ private:
 	MoveDirection direccionSiguiente;
 
 	// Velocidad a la que mueve el fantasma en cualquier eje
-	int velocidadPatron;
+	int velocidad;
 
 	TextureAnimation* texturaAnimacion;
 
 	//SDL_Rect colision;
-	bool kill = false;
+	bool dead = false;
 
-public:
-	Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
+public:	
 	//Constructores y destructores
-	//Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
+	Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posicionY, int _velocidad);
 	//~Pacman();
 
 
 	//Metodos accesores
 
-	int getVelocidadPatron() { return velocidadPatron; }
+	int getVelocidadPatron() { return velocidad; }
 	Tile* getTile() { return tileActual; }
 	Tile* getTileSiguiente() { return tileSiguiente; }
 
-	void setVelocidadPatron(int _velocidadPatron) { velocidadPatron = _velocidadPatron; }
+	void setVelocidadPatron(int _velocidad) { velocidad = _velocidad; }
 	void setTile(Tile* _tileNuevo);
 	void setTileSiguiente(Tile* _tileSiguienteNuevo) { tileSiguiente = _tileSiguienteNuevo; }
 
 
 	// Metodos varios
-	bool tratarDeMover(MoveDirection _direccionNueva);
-	//bool hayColision(const SDL_Rect& _colision, const SDL_Rect& _otraColision);
-	//SDL_Rect getColision() { return colision; }
-	// Manejador de eventos de pacman
-	void handleEvent(SDL_Event* event) override;
+	//virtual bool tratarDeMover(MoveDirection _direccionNueva) {};
+
+	virtual void handleEvent(SDL_Event* event) {};
 	// Mover pacman
-	void update() override;
+	virtual void update() {};
 	// Renderizar imagen pacman
-	void render() override;
+	virtual void render() {};
 	//void update();
-	void borrarGameObject() override;
+	virtual void borrarGameObject() override;
 
 };
 
