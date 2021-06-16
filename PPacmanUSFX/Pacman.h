@@ -33,7 +33,7 @@ protected:
 	TextureAnimation* texturaAnimacion;
 
 	//SDL_Rect colision;
-	bool dead = false;
+	bool dead;
 
 public:	
 	//Constructores y destructores
@@ -50,6 +50,9 @@ public:
 	void setVelocidadPatron(int _velocidad) { velocidad = _velocidad; }
 	void setTile(Tile* _tileNuevo);
 	void setTileSiguiente(Tile* _tileSiguienteNuevo) { tileSiguiente = _tileSiguienteNuevo; }
+
+	bool getDead() { return dead; }
+	void setDead(bool _dead) { dead = _dead; }
 
 
 	// Metodos varios

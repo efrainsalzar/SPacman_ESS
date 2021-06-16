@@ -6,6 +6,6 @@ x.xxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxx.x
 x..................x...................x
 x.xxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxx.x
 x..................x...................x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x
+x xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x
 xBCPI              p                   x
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

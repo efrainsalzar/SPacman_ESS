@@ -55,19 +55,13 @@ bool FantasmaClasico::avanzar(MoveDirection _direccionNueva) {
 
 void FantasmaClasico::update()
 {
-	//if (tileActual != nullptr && tileActual->getPacman() != nullptr) {
-
-	//	SDL_Rect* kill = new SDL_Rect({ posicionX, posicionY, ancho, alto, });
-
-	//	if (revisarColision(kill, tileSiguiente->getPacman()->getColision())) {
-	//		tileSiguiente->getPacman()->borrarGameObject();
-	//	}
-	//}
 	Pacman* pacman = tileGraph->getPacman();
+
 
 
 	if (pacman != nullptr) {
 		GameObject::update();
+
 		// The NPC will calculate a new camino every time it has entered a new tile
 		// In this way, it will dynamically follow Pacman
 		if (tileActual == tileSiguiente) {
@@ -101,8 +95,8 @@ void FantasmaClasico::update()
 			//	}
 			//}
 			if (revisarColision(pacman->getColision())) {
-				pacman->render();
-				pacman->borrarGameObject();
+				cout << "kill" << endl;
+				pacman->setDead(true);
 			}
 
 		}
@@ -136,6 +130,8 @@ void FantasmaClasico::update()
 
 void FantasmaClasico::render()
 {
+	setParametrosAnimacion(2);
+
 	SDL_Rect* cuadroDeAnimacion = new SDL_Rect();
 	switch (direccionActual)
 	{

@@ -25,6 +25,7 @@ Pacman::Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posici
 
 
 	velocidad = _velocidad;
+	dead = false;
 }
 
 void Pacman::setTile(Tile* _tileNuevo) {
@@ -46,9 +47,7 @@ void Pacman::setTile(Tile* _tileNuevo) {
 
 void Pacman::borrarGameObject()
 {
-	dead = true;
-	//render();
-	GameObject::borrarGameObject();
+	//GameObject::borrarGameObject();
 	tileActual->setPacman(nullptr);
 	SDL_Delay(1000);
 
