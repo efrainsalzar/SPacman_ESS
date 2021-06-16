@@ -39,39 +39,39 @@ bool MapGenerator::load(string path)
 			switch (chars[x])
 			{
 			case 'x':
-				objetoNuevo = factory->createParedInstance(tileNuevo, textureManager->getTexture("pared"), x * Tile::altoTile, y * Tile::altoTile);
+				objetoNuevo = factory->createParedInstance(tileNuevo, textureManager, x * Tile::altoTile, y * Tile::altoTile);
 				objetoNuevo->setParametrosAnimacion(1);
 				break;
 			case '.':
-				objetoNuevo = factory->createMonedaInstance(tileNuevo, textureManager->getTexture("moneda"), x * 25, y * 25);
+				objetoNuevo = factory->createMonedaInstance(tileNuevo, textureManager, x * 25, y * 25);
 				objetoNuevo->setParametrosAnimacion(6);
 				break;
 			case 's':
-				objetoNuevo = factory->createMonedaInstance(tileNuevo, textureManager->getTexture("superMoneda"), x * 25, y * 25);
+				objetoNuevo = factory->createMonedaInstance(tileNuevo, textureManager, x * 25, y * 25);
 				objetoNuevo->setParametrosAnimacion(1);
 				break;
 			case 'p':
-				objetoNuevo = factory->createPacmanInstance(tileNuevo, textureManager->getTexture("pacman"), x * 25, y * 25, 3);
+				objetoNuevo = factory->createPacmanInstance(tileNuevo, textureManager, x * 25, y * 25, 3);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'B':
-				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager->getTexture("fantasma1"), x * 25, y * 25, 2);
+				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'C':
-				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager->getTexture("fantasma2"), x * 25, y * 25, 2);
+				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'I':
-				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager->getTexture("fantasma3"), x * 25, y * 25, 2);
+				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'P':
-				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager->getTexture("fantasma4"), x * 25, y * 25, 2);
+				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
 				objetoNuevo->setParametrosAnimacion(2);
 				break;
 			case 'f':
-				objetoNuevo = factory->createFrutaInstance(tileNuevo, textureManager->getTexture("fruta"), x * 25, y * 25);
+				objetoNuevo = factory->createFrutaInstance(tileNuevo, textureManager, x * 25, y * 25);
 				objetoNuevo->setParametrosAnimacion(1);
 				break;
 			}

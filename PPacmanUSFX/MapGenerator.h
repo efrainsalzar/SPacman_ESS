@@ -6,19 +6,19 @@
 #include <fstream>
 
 #include "GameObject.h"
-#include "Texture.h"
-#include "Moneda.h"
-#include "Fantasma.h"
-#include "Pacman.h"
-#include "Fruta.h"
-#include "Pared.h"
-#include "Tile.h"
+//#include "Texture.h"
+//#include "Moneda.h"
+//#include "Fantasma.h"
+//#include "Pacman.h"
+//#include "Fruta.h"
+//#include "Pared.h"
+//#include "Tile.h"
 #include "TileGraph.h"
 #include "TextureManager.h"
-#include "TextureAnimation.h"
+//#include "TextureAnimation.h"
 
 #include "Factory.h"
-#include "FactoryPacmanClasico.h"
+//#include "FactoryPacmanClasico.h"
 using namespace std;
 
 class MapGenerator

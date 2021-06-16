@@ -1,2 +1,3 @@
-﻿  MapGenerator.cpp
+﻿  GameManager.cpp
+E:\sis457\pac.man\PPacmanUSFX\GameManager.cpp(27,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   PPacmanUSFX.vcxproj -> E:\sis457\pac.man\x64\Debug\PPacmanUSFX.exe
