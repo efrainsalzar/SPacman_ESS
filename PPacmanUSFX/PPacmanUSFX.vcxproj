@@ -36,6 +36,7 @@
     <ClCompile Include="Pared.cpp" />
     <ClCompile Include="ParedClasico.cpp" />
     <ClCompile Include="PathFinder.cpp" />
+    <ClCompile Include="Portal.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureAnimation.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -60,6 +61,7 @@
     <ClInclude Include="Pared.h" />
     <ClInclude Include="ParedClasico.h" />
     <ClInclude Include="PathFinder.h" />
+    <ClInclude Include="Portal.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureAnimation.h" />

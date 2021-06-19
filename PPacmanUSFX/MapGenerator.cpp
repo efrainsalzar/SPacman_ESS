@@ -74,6 +74,9 @@ bool MapGenerator::load(string path)
 				objetoNuevo = factory->createFrutaInstance(tileNuevo, textureManager, x * 25, y * 25);
 				objetoNuevo->getParametrosAniamcion();
 				break;
+			case 'w':
+				objetoNuevo = factory->createPortalInstance(tileNuevo, textureManager, x * 25, y * 25);
+				objetoNuevo->getParametrosAniamcion();
 			}
 
 			// If the object was created, add it to the vector

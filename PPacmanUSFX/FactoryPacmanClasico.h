@@ -6,6 +6,7 @@
 #include "ParedClasico.h"
 #include "MonedaClasico.h"
 #include "FrutaClasico.h"
+#include "Portal.h"
 class FactoryPacmanClasico :
     public Factory
 {
@@ -15,6 +16,9 @@ public:
     GameObject* createParedInstance(Tile* _tile, TextureManager* _texturaManager, int _posicionX, int _posicionY) override;
     GameObject* createMonedaInstance(Tile* _tile, TextureManager* _texturaManager, int _posicionX, int _posicionY) override;
     GameObject* createFrutaInstance(Tile* _tile, TextureManager* _texturaManager, int _posicionX, int _posicionY) override;
+
+    GameObject* createPortalInstance(Tile* _tile, TextureManager* _texturaManager, int _posicionX, int _posicionY) override;
+
 
 };
 

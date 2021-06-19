@@ -5,14 +5,23 @@ FantasmaClasico::FantasmaClasico(Tile* _tile, Texture* _fantasmaTexture, int _po
 {
 	texturaAnimacion = new TextureAnimation();
 	texturaAnimacion->setTexture(_fantasmaTexture);
-	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 50,25,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 75,25,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0,25,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 25,25,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 0,0,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 25,0,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 50,0,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 75,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 0,50,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 25,50,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 25,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 0,75,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 25,75,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 0,25,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 25,25,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 50,25,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 75,25,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0,25,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 25,25,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 0,0,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 25,0,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 50,0,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 75,0,25,25 }));
+
 }
 
 bool FantasmaClasico::avanzar(MoveDirection _direccionNueva) {

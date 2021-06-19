@@ -25,3 +25,8 @@ GameObject* FactoryPacmanClasico::createFrutaInstance(Tile* _tile, TextureManage
     return new FrutaClasico(_tile, _texturaManager->getTexture("fruta"), _posicionX, _posicionY);
 }
 
+GameObject* FactoryPacmanClasico::createPortalInstance(Tile* _tile, TextureManager* _texturaManager, int _posicionX, int _posicionY)
+{
+    return new Portal(_tile, _texturaManager->getTexture("portal"), _posicionX, _posicionY);
+}
+

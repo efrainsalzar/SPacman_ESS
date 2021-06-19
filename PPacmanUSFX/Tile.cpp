@@ -10,6 +10,7 @@ Tile::Tile() {
 	fruta = nullptr;
 	moneda = nullptr;
 	pared = nullptr;
+	portal = nullptr;
 }
 
 Tile::Tile(int _x, int _y) {
@@ -21,4 +22,5 @@ Tile::Tile(int _x, int _y) {
 	fruta = nullptr;
 	moneda = nullptr;
 	pared = nullptr;
+	portal = nullptr;
 }

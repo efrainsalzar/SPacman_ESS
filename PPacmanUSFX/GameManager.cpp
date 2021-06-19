@@ -26,11 +26,11 @@ int GameManager::onExecute() {
 
 	srand(time(nullptr));
 
-	TileGraph tileGraphGM(54, 33);
+	TileGraph tileGraphGM(47, 22);
 	textureManager = new TextureManager();
 	GameObject::tileGraph = &tileGraphGM;
 	generadorNivelJuego = new MapGenerator(&tileGraphGM, textureManager, SCREEN_WIDTH, SCREEN_HEIGHT, tipoFabrica);
-	generadorNivelJuego->load("Resources/mapa2.txt");
+	generadorNivelJuego->load("Resources/mapa3.txt");
 	generadorNivelJuego->populate(actoresJuego);
 
 	SDL_Event Event;

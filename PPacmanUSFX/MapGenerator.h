@@ -13,6 +13,7 @@
 //#include "Fruta.h"
 //#include "Pared.h"
 //#include "Tile.h"
+//#include "Portal.h"
 #include "TileGraph.h"
 #include "TextureManager.h"
 //#include "TextureAnimation.h"

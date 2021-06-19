@@ -6,6 +6,7 @@ class Fantasma;
 class Fruta;
 class Moneda;
 class Pared;
+class Portal;
 
 class Tile
 {
@@ -15,6 +16,7 @@ private:
 	Fruta* fruta;
 	Moneda* moneda;
 	Pared* pared;
+	Portal* portal;
 
 	int posicionX;
 	int posicionY;
@@ -32,6 +34,8 @@ public:
 	Fruta* getFruta() { return fruta; }
 	Moneda* getMoneda() { return moneda; }
 	Pared* getPared() { return pared; }
+
+	Portal* getPortal() { return portal; }
 	int getPosicionX() { return posicionX; }
 	int getPosicionY() { return posicionY; }
 
@@ -40,6 +44,8 @@ public:
 	void setFruta(Fruta* _fruta) { fruta = _fruta; }
 	void setMoneda(Moneda* _moneda) { moneda = _moneda; }
 	void setPared(Pared* _pared) { pared = _pared; }
+
+	void setPortal(Portal* _portal) { portal = _portal; }
 	void setPosicionX(int _posicionX) { posicionX = _posicionX; }
 	void setPosicionY(int _posicionY) { posicionY = _posicionY; }
 

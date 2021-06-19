@@ -29,6 +29,10 @@ TextureManager::TextureManager()
 	paredTexture = new Texture();
 	paredTexture->loadFromImage(pathPared);
 	addTexture("pared", paredTexture);
+
+	portalTexture = new Texture();
+	portalTexture->loadFromImage(pathPortal);
+	addTexture("portal", portalTexture);
 }
 
 TextureManager::~TextureManager() {

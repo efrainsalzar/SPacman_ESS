@@ -5,23 +5,38 @@ PacmanClasico::PacmanClasico(Tile* _tile, Texture* _texturePacman, int _posicion
 {
 	texturaAnimacion = new TextureAnimation();
 	texturaAnimacion->setTexture(_texturePacman);
-	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 0, 0, 25, 25 }));
-	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 25, 0, 25, 25 }));
-	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0, 25, 25, 25 }));
-	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 25, 25, 25, 25 }));
-	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 50, 25, 25, 25 }));
-	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 75, 25, 25, 25 }));
-	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 50, 0, 25, 25 }));
-	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 75, 0, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 0, 50, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 25, 50, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0, 0, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 25, 0, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 0, 75, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 25, 75, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 0, 25, 25, 25 }));
+	texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 25, 25, 25, 25 }));
 
-	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,50,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,50,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,0,25,25 }));
+	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,25,25,25 }));
 	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,50,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,50,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,75,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,75,25,25 }));
 	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,75,25,25 }));
-	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,75,25,25 }));
+
+
+	//texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 0, 0, 25, 25 }));
+	//texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 25, 0, 25, 25 }));
+	//texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0, 25, 25, 25 }));
+	//texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 25, 25, 25, 25 }));
+	//texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 50, 25, 25, 25 }));
+	//texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 75, 25, 25, 25 }));
+	//texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 50, 0, 25, 25 }));
+	//texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 75, 0, 25, 25 }));
+
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,50,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,50,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,50,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,50,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,75,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,75,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,75,25,25 }));
+	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,75,25,25 }));
 
 }
 
@@ -104,7 +119,7 @@ void PacmanClasico::update()
 	{
 		tileActual->setPacman(nullptr);
 		kill++;
-		if (kill >= 55)
+		if (kill >= 27)
 		{
 			borrarGameObject();
 		}
@@ -200,7 +215,7 @@ void PacmanClasico::render()
 		texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
 	}
 	else {
-		setParametrosAnimacion(8);
+		setParametrosAnimacion(4);
 		cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("dead")[numeroFrame];
 		texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
 	}

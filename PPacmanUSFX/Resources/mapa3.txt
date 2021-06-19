@@ -1,0 +1,22 @@
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x.............................................x
+x.xxxx.xxxxxx.xxxxxxxxx.xxxxxxxxx.xxxxxx.xxxx.x
+x.xx.......................................xx.x
+x.xx.xxx.xxxxxxxxx.xxxxxxxxx.xxxxxxxxx.xxx.xx.x
+x....xxx.........x           x.........xxx....x
+xxxx.x...xxxxxxx.x xxxx xxxx x.xxxxxxx...x.xxxx
+   x.x.x.x     x.x x       x x.x     x.x.x.x
+xxxx.x.x.x     x.x xBPIC   x x.x     x.x.x.xxxx
+w   .x.x.x     x.x xxxxxxxxx x.x     x.x.x.   w
+xxxx.x.x.x     x.x           x.x     x.x.x.xxxx
+   x.x...x     x.x.xxxxxxxxx.x.x     x...x.x
+xxxx.xxx.xxxxxxx.x.x   f   x.x.xxxxxxx.xxx.xxxx
+x....................xxxxx....................x
+x.xxxx.xxxx.xxxxxxxx...x...xxxxxxx.xxxxx.xxxx.x
+x.x x................x.x.x................x x.x
+x.xxx.xxxx.x.xxxxxxx...x...xxxxxx.x.xxxxx.xxx.x
+x..........x.........x.p.x........x...........x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

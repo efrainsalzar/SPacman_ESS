@@ -17,6 +17,9 @@ ParedClasico::ParedClasico(Tile* _tile, Texture* _paredTexture, int _posicionX, 
 	//texturaAnimacion->addCuadroAnimacion("pared", new SDL_Rect({ 0, 0, 25, 25 }));
 }
 
+void ParedClasico::formaPared() {
+}
+
 void ParedClasico::render() 
 {
 	SDL_Rect* cuadroAnimacion = new SDL_Rect();

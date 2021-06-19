@@ -6,6 +6,8 @@ class ParedClasico :
 public:
     ParedClasico(Tile* _tile, Texture* _paredTexture, int _posicionX, int _posicionY);
 
+    void formaPared();
+
     void render() override;
 
 };

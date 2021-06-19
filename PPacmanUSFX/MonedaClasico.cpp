@@ -20,6 +20,7 @@ MonedaClasico::~MonedaClasico()
 }
 
 void MonedaClasico::render() {
+	setParametrosAnimacion(6);
 	SDL_Rect* cuadroAnimacion = new SDL_Rect();
 	cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("moneda")[numeroFrame];
 	texturaAnimacion->getTexture()->render(getPosicionX(), getPosicionY(), cuadroAnimacion);

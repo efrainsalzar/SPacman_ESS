@@ -52,7 +52,6 @@ public:
 
 	// Metodos varios
 	// Manejador de eventos de la fruta
-	// 
 	//void handleEvent(SDL_Event& e);
 	
 	// Mostrar u ocultar fruta
