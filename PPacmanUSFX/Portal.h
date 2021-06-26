@@ -4,6 +4,8 @@
 #include "TileGraph.h"
 #include "TextureManager.h"
 #include "TextureAnimation.h"
+#include "Pacman.h"
+
 class Portal :
 	public GameObject
 {
@@ -17,7 +19,7 @@ public:
 	Tile* getTile() { return tileActual; }
 	void setTile(Tile* _tileNuevo);
 
-	//void update() override;
+	void update() override;
 	void render() override;
 
 };

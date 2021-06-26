@@ -40,43 +40,43 @@ bool MapGenerator::load(string path)
 			{
 			case 'x':
 				objetoNuevo = factory->createParedInstance(tileNuevo, textureManager, x * Tile::altoTile, y * Tile::altoTile);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case '.':
 				objetoNuevo = factory->createMonedaInstance(tileNuevo, textureManager, x * 25, y * 25);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 's':
 				objetoNuevo = factory->createMonedaInstance(tileNuevo, textureManager, x * 25, y * 25);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 'p':
 				objetoNuevo = factory->createPacmanInstance(tileNuevo, textureManager, x * 25, y * 25, 3);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 'B':
 				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 'C':
 				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 'I':
 				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 'P':
 				objetoNuevo = factory->createFantasmaInstance(tileNuevo, textureManager, x * 25, y * 25, 2);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 'f':
 				objetoNuevo = factory->createFrutaInstance(tileNuevo, textureManager, x * 25, y * 25);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 				break;
 			case 'w':
 				objetoNuevo = factory->createPortalInstance(tileNuevo, textureManager, x * 25, y * 25);
-				objetoNuevo->getParametrosAniamcion();
+				objetoNuevo->getParametrosAnimacion();
 			}
 
 			// If the object was created, add it to the vector

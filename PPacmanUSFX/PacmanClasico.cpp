@@ -18,34 +18,11 @@ PacmanClasico::PacmanClasico(Tile* _tile, Texture* _texturePacman, int _posicion
 	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,25,25,25 }));
 	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,50,25,25 }));
 	texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,75,25,25 }));
-
-
-	//texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 0, 0, 25, 25 }));
-	//texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 25, 0, 25, 25 }));
-	//texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0, 25, 25, 25 }));
-	//texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 25, 25, 25, 25 }));
-	//texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 50, 25, 25, 25 }));
-	//texturaAnimacion->addCuadroAnimacion("arriba", new SDL_Rect({ 75, 25, 25, 25 }));
-	//texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 50, 0, 25, 25 }));
-	//texturaAnimacion->addCuadroAnimacion("abajo", new SDL_Rect({ 75, 0, 25, 25 }));
-
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,50,25,25 }));
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,50,25,25 }));
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,50,25,25 }));
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,50,25,25 }));
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 0,75,25,25 }));
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 25,75,25,25 }));
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 50,75,25,25 }));
-	//texturaAnimacion->addCuadroAnimacion("dead", new SDL_Rect({ 75,75,25,25 }));
-
 }
 
 //void PacmanClasico::deadPacman()
 //{
-//	SDL_Rect* cuadroAnimacion = new SDL_Rect();
-//
-//
-//
+//	SDL_Rect* cuadroAnimacion = new SDL_Rect()
 //	cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("dead")[numeroFrame];
 //}
 
@@ -112,11 +89,12 @@ bool PacmanClasico::tratarDeMover(MoveDirection _direccionNueva)
 void PacmanClasico::update()
 {	
 	// Animacion de pacman
-	//if (enMovimiento) {
+	if (enMovimiento) {
 		GameObject::update();
-	//}
+	}
 	if (dead)
 	{
+		GameObject::update();
 		tileActual->setPacman(nullptr);
 		kill++;
 		if (kill >= 27)
@@ -145,9 +123,6 @@ void PacmanClasico::update()
 				tileActual->getFruta()->borrarGameObject();
 			}
 		}
-
-
-		//deadPacman();
 
 			// Cambiar de tile/direccion
 		if (tileSiguiente == tileActual || tileSiguiente == nullptr) {
@@ -186,6 +161,7 @@ void PacmanClasico::update()
 
 			if ((direccionActual == MOVE_LEFT || direccionActual == MOVE_RIGHT) && posicionX == tileSiguiente->getPosicionX() * Tile::anchoTile)
 				setTile(tileSiguiente);
+
 		}
 	}
 

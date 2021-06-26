@@ -7,6 +7,7 @@
 using namespace std;
 
 class TileGraph;
+class Tile;
 
 class GameObject
 {
@@ -66,7 +67,7 @@ public:
 	void setEnMovimiento(bool _enMovimiento) { enMovimiento = _enMovimiento; }
 
 	// Metodos varios
-	int getParametrosAniamcion() { return framesMovimiento; }
+	int getParametrosAnimacion() { return framesMovimiento; }
 	void setParametrosAnimacion(int _framesMovimiento) { framesMovimiento = _framesMovimiento; }
 	virtual SDL_Rect* getColision() { return colision; }
 	bool revisarColision(const SDL_Rect* _otraColision);

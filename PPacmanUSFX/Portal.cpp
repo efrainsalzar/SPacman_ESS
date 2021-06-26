@@ -37,12 +37,32 @@ void Portal::setTile(Tile* _tileNuevo)
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
 	}
+
 }
 
-//void Portal::update() 
-//{
-//	GameObject::update();
-//}
+void Portal::update() 
+{
+	GameObject::update();
+	//if (tileActual != nullptr && tileActual->getPacman() != nullptr) {
+	//	//SDL_Rect* portalPacman = new SDL_Rect({ posicionX, posicionY, ancho, alto, });
+	//	Pacman* transportar = tileGraph->getPacman();
+
+	//	transportar->setPosicionX(75);
+	//	transportar->setTile(transportar->getTile());
+	//	cout << "portal" << endl;
+	//}
+
+	//Pacman* pacman = tileGraph->getPacman();
+
+	//if (revisarColision(pacman->getColision())) {
+	//	cout << "portal" << endl;
+	//	pacman->setPosicionX(25);
+	//	pacman->setPosicionY(12);
+	//	pacman->setTile(pacman->getTile());
+	//}
+	//colision->x = posicionX;
+	//colision->y = posicionY;
+}
 
 void Portal::render()
 {
